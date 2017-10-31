@@ -1,3 +1,5 @@
+require 'rails_helper'
+
 describe "When I visit any page with an item on it" do 
 	it "I can see a link or button for Add to Cart" do
 		category = Category.create(title: "Breakfast")
@@ -7,7 +9,7 @@ describe "When I visit any page with an item on it" do
 
 		expect(page).to have_content("Cart")
 		click_link "Add to Cart"
-
+		save_and_open_page
 		click_on "View Cart"
 	
 		expect(current_path).to eq "/cart"
