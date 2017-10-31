@@ -13,10 +13,10 @@ describe "User visits the root path" do
     fill_in "user[name]", with: "Bill"
     click_on "Create User"
 
-    expect(current_path).to be("/dashboard")
-    expect(page).to have_content("Logged in as #{User.last.username}")
+    expect(current_path).to eq("/dashboard")
+    expect(page).to have_content("Logged in as #{User.last.name}")
     expect(page).to have_content("#{User.last.username}")
-    expect(page).to have_content("Login")
+    expect(page).to have_no_content("Login")
     expect(page).to have_content("Logout")
   end
 end
