@@ -8,7 +8,7 @@ class Cart
 
   def items
     @contents.map do |item, quantity|
-      Item.find(item.to_i)
+      Item.find_by(id: item.to_i)
     end
   end
 
