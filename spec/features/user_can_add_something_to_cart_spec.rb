@@ -6,8 +6,7 @@ describe "When I visit any page with an item on it" do
 		visit items_path
 
 		expect(page).to have_content("Cart")
-
-		click_on "Add To Cart"
+		click_link "Add to Cart"
 
 		click_on "View Cart"
 	
