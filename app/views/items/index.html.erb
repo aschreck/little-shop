@@ -2,5 +2,6 @@
 <h1>Items</h1>
 <% @items.each do |item| %>
 <%= item.title %>
-<%= link_to "Add to Cart", cart_path(item_id: item.id) %>
+<%= link_to "Add to Cart", cart_path(item_id: item.id), method: :post %>
 <% end %>
+<%= link_to "View Cart", "/cart" %>
