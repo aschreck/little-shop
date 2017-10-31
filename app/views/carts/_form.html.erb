@@ -1,0 +1,6 @@
+<%=form_tag(cart_path, method: :put) do %>
+	<%= label_tag "Quantity" %>
+	<%= hidden_field_tag("item_id", item.id)%>
+	<%= text_field_tag "item[quantity]" %>
+	<%= submit_tag (value = "Submit") %>
+<%end%>
