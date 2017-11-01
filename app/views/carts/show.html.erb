@@ -11,4 +11,9 @@
 <% end %>
 
 <h3>Total Price: <%=@cart.total%></h3>
-
+<br>
+  <% if current_user %>
+  <h4>"Checkout"</h4>
+  <% else %>
+  <h4><%= link_to "Login or Create Account to Checkout", login_path %></h4>
+  <% end %>

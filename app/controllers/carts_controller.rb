@@ -13,7 +13,7 @@ class CartsController < ApplicationController
   end
 
   def update
-		quantity = params["item"]["quantity"] 
+		quantity = params["item"]["quantity"]
 		id = params[:item_id]
 		session[:cart][id] = quantity.to_i
 		redirect_to '/cart'
