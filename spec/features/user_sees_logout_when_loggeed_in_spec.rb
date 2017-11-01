@@ -8,7 +8,7 @@ describe "when a user is logged in" do
 
     fill_in "session[username]", with: "bobby"
     fill_in "session[password]", with: "1234"
-    click_on "Save Session"
+    click_on "Log In"
 
     expect(page).to have_content("Logout")
   end
