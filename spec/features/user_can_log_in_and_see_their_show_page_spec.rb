@@ -7,7 +7,9 @@ describe "A user that has already registered can log in and see show page" do
 
     fill_in "session[username]", with: "user"
     fill_in "session[password]", with: "password"
-    
+    click_button "Log In"
+
+    save_and_open_page
     expect(page).to have_content "Logged in as user"
   end 
 end 

@@ -3,6 +3,7 @@ require 'rails_helper'
 describe "User visits the root path" do
   it "they can create an account" do
     visit root_path
+    
     click_on "Login"
     expect(current_path).to eq("/login")
 
