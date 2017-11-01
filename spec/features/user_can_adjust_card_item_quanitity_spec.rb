@@ -1,3 +1,4 @@
+require 'rails_helper'
 describe "User visits /cart with items in the cart." do
 	it "they can increase the quantity" do
 	  category = Category.create(title: "Breakfast")
@@ -9,11 +10,10 @@ describe "User visits /cart with items in the cart." do
 		click_on "View Cart"
 		fill_in "item[quantity]", with: 2
 		click_on "Submit"
-		save_and_open_page
 
 		expect(page).to have_content(2)
 
 		expect(page).to have_content(3)
 	end
 
-end 
+end
