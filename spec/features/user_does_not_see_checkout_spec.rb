@@ -31,7 +31,7 @@ describe "when user is not logged in he cannot see checkout" do
     expect(page).to have_content("Logout")
 
     click_on "View Cart"
-    save_and_open_page
+
     expect(page).to have_content("Checkout")
     expect(page).to have_content(2)
     expect(page).to have_content(3)
