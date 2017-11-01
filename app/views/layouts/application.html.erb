@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if current_user %>
+    <h4><%= link_to "Logout", logout_path %></h4>
+    <% else %>
+    <h4><%= link_to "Login", login_path %></h4>
+    <% end %>
   <p class="flash"><%= flash.notice %></p>
     <%= yield %>
   </body>
