@@ -1,10 +1,16 @@
 class SessionsController < ApplicationController
   def new
-  
+
   end
 
   def create
-		#add the information just input into params into the session that is prevenient 
+    @user = User.find_by(username: params[:session][:username])
+    if @user && @user.authenticate(params[:session][:password])
+      session[:user_id] = @user.id
+      redirect_to dashboard_path
+    else
+      render :new
+    end
   end
 
   def destroy
