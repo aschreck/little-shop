@@ -3,3 +3,4 @@ class Order < ApplicationRecord
   has_many :orders_items
   has_many :items, through: :orders_items
 end
+
