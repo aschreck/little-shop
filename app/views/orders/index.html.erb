@@ -1,4 +1,6 @@
 <h1>Orders Index Page</h1>
 <% current_user.orders.each do |order| %>
-  <%= order.id %>
+<ul>
+  <li><%= order.id %> <%= link_to "Show Order", order_path(order)%> </li>
+</ul>
 <% end %>
