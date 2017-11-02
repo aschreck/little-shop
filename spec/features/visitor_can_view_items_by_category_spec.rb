@@ -5,7 +5,7 @@ describe 'Visitor visits a categories show page' do
     category = Category.create(title: "Stuff")
     item = category.items.create(title: "Thing", description: "Its a thing", price: 10.00, image: "thing.png")
 
-		visit "/#{category.slug}"
+		visit "/#{category.title}"
 
     expect(page).to have_content(category.title)
     expect(page).to have_content(item.title)
