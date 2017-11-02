@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/dashboard', to: "base#dashboard"
-
   end
 
   resources :items, only: [:index]
