@@ -10,7 +10,6 @@ class CartsController < ApplicationController
 
   def show
     @cart = Cart.new(session[:cart])
-		byebug
   end
 
   def update
