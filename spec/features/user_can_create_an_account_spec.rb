@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "User visits the root path" do
   it "they can create an account" do
     visit root_path
-    
+
     click_on "Login"
     expect(current_path).to eq("/login")
 
@@ -15,7 +15,7 @@ describe "User visits the root path" do
     click_on "Create User"
 
     expect(current_path).to eq("/dashboard")
-    expect(page).to have_content("Logged in as #{User.last.name}")
+    expect(page).to have_content("#{User.last.name}")
     expect(page).to have_content("#{User.last.username}")
     expect(page).to have_no_content("Login")
     expect(page).to have_content("Logout")

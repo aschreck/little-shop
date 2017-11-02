@@ -9,6 +9,6 @@ describe "A user that has already registered can log in and see show page" do
     fill_in "session[password]", with: "password"
     click_button "Log In"
 
-    expect(page).to have_content "Logged in as user"
+    expect(page).to have_content "Welcome, #{user.name}"
   end
 end
