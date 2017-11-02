@@ -2,5 +2,9 @@
 <h1>Items</h1>
 <% @items.each do |item| %>
 <%= item.title %>
-<%= link_to "Add to Cart", cart_path(item_id: item.id), method: :post %>
+	<% if item.active? %>
+		<%= link_to "Add to Cart", cart_path(item_id: item.id), method: :post %>
+	<% else %>
+		<p>Item Retired</p>
+	<% end %>
 <% end %>
