@@ -1,9 +1,8 @@
 <% @order.items.each do |item| %>
-<ul>
-  <li><%= item.title %></li>
-  <li><%= item.description%></li>
-  <li><%= item.price %></li>
-</ul>
+<% binding.pry %>
+<p><%= item.title %></p>
+<p><%= item.description%></p>
+<p><%= item.price %></p>
 <% end %>
 <p><%= @order.status %></p>
 <p><%= @order.total %></p>
