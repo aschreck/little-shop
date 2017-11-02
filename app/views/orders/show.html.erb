@@ -1,0 +1,12 @@
+<% @order.items.each do |item| %>
+<ul>
+  <li><%= item.title %></li>
+  <li><%= item.description%></li>
+  <li><%= item.price %></li>
+</ul>
+<% end %>
+<p><%= @order.status %></p>
+<p><%= @order.total %></p>
+<p><%= @order.created_at %></p>
+
+<%= @order.updated_at if @order.completed? || @order.cancelled?  %>

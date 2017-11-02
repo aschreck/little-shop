@@ -17,6 +17,6 @@ class Cart
 			Item.find(item_id.to_i).price * quantity	
 		end.sum
 		sprintf('%.2f', total)
-	end 
+	end
 
 end

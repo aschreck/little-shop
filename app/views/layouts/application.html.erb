@@ -9,11 +9,30 @@
   </head>
 
   <body>
-    <% if current_user %>
-    <h4><%= link_to "Logout", logout_path %></h4>
-    <% else %>
-    <h4><%= link_to "Login", login_path %></h4>
-    <% end %>
+    <header class="title">
+      <div class="icon">
+        <%= image_tag ("crescent-moon.png") %>
+        <h1>Little Nightmares</h1>
+      </div>
+      <% if current_user %>
+      <h3><%= link_to "Logout", logout_path, method: :delete %></h4>
+        <% else %>
+      <h3><%= link_to "Login", login_path %></h4>
+        <% end %>
+    </header>
+  <ul>
+    <li><%= link_to "Home", root_path %></li>
+    <li><%= link_to "Items", items_path %></li>
+    <li class="dropdown">
+      <a href="javascript:void(0)" class="dropbtn">Categories</a>
+        <div class="dropdown-content">
+          <% categories.each do |category| %>
+            <%= link_to category.title, "/#{category.title}" %>
+          <% end %>
+        </div>
+    </li>
+    <li><%= link_to "View Cart", "/cart" %></li>
+  </ul>
   <p class="flash"><%= flash.notice %></p>
     <%= yield %>
   </body>

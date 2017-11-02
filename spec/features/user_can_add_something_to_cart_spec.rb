@@ -12,6 +12,7 @@ describe "When I visit any page with an item on it" do
 
     click_on "View Cart"
 
+
     expect(current_path).to eq "/cart"
     expect(page).to have_content(item.title) 
   end
