@@ -1,6 +1,7 @@
 <h1>This is <%= @category.title %>'s Show Page</h1>
 <% @category.items.each do |item| %>
-  <%= item.title %>
-  <%= item.description %>
-  <%= item.price %>
+  <%= item.image %><br>
+  <%= link_to item.title, item_path(item)%><br>
+  <%= item.description %><br>
+  <%= item.price %><br>
 <% end %>

@@ -22,7 +22,7 @@ class CartsController < ApplicationController
   def destroy
     item = Item.find(params[:item_id].to_i)
     session[:cart].delete(params[:item_id])
-    flash[:notice] = %Q[Successfully removed <a href="/items/#{item.id}">#{item.title}</a> from your cart]
+    flash[:notice] = %Q[Successfully removed <a href="/items/#{item.id}">#{item.title}</a> from your cart.]
     redirect_to cart_path
   end
 end

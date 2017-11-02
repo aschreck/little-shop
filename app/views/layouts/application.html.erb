@@ -33,7 +33,11 @@
     </li>
     <li><%= link_to "View Cart", "/cart" %></li>
   </ul>
-  <p class="flash"><%= flash.notice %></p>
+  <% flash.each do |type, message| %>
+	<div class="green-flash">
+    	<p><%= sanitize(message) %></p>
+  </div>
+ <% end %>
     <%= yield %>
   </body>
 </html>
