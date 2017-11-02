@@ -24,7 +24,7 @@ describe 'When a logged in user visits /orders' do
 
     visit orders_path
 
-  click_on "Show Order"
+    click_on "Show Order"
 
     expect(current_path).to eq(order_path(order_1))
     expect(page).to have_content(item.title)

@@ -7,15 +7,16 @@ class OrdersController < ApplicationController
   end
 
 	def create
-		order = current_user.orders.new()
+		order = current_user.orders.create()
 		session[:cart].each do |key, value|
 			value.times do 
-				order.item_ids << Item.find(key.to_i)
-			end 
-		end 
+				order.update_attribute(order.item_ids, key.to_i)
+			end
+		end
+		order
 		order.save
 		flash[:notice] = "Order was successfully placed"
-		session.delete(:cart)  
+		session.delete(:cart)
 		redirect_to orders_path
 	end
 end
