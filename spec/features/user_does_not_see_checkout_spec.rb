@@ -29,7 +29,6 @@ describe "when user is not logged in he cannot see checkout" do
     click_on "Create User"
 
     expect(page).to have_content("Logout")
-
     click_on "View Cart"
 
     expect(page).to have_content("Checkout")
