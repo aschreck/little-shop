@@ -1,12 +1,13 @@
 <h1>Items</h1>
 <% @items.each do |item| %>
 <%= item.image %>
-<%= item.title %>
+<%= link_to item.title, item_path(item) %>
 <%= item.description %>
 <%= item.price %>
 	<% if item.active? %>
 		<%= link_to "Add to Cart", cart_path(item_id: item.id), method: :post %>
 	<% else %>
 		<p>Item Retired</p>
+		<!-- make this into something OTHER than a p tag - ugly  -->
 	<% end %>
 <% end %>
