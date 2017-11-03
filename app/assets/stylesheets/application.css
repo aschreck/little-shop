@@ -51,6 +51,7 @@ ul {
 
 li {
     float: left;
+    font-size: 25px;
 }
 
 li a, .dropbtn {
@@ -111,4 +112,35 @@ div.polaroid {
 div.container {
   text-align: center;
   padding: 10px 20px;
+}
+
+div.items-index {
+  width: 25%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+} div.items-index img{
+  width: 100%;
+}
+
+.items {
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.cart {
+  display: flex;
+  margin-top: 10px;
+  color: white;
+} .cart a{
+  font-size: 20px;
+  color: white;
+} .cart h3{
+  margin: 8px 0px;
 }
