@@ -1,13 +1,20 @@
-<h1>Items</h1>
+<header class="header">
+	<h1>Items</h1>
+</header>
+<section class="items">
 <% @items.each do |item| %>
-<%= item.image %>
-<%= link_to item.title, item_path(item) %>
-<%= item.description %>
-<%= item.price %>
-	<% if item.active? %>
+<div class="items-index">
+	<%= image_tag item.image %>
+  <div class="container">
+		<h3>Title: <%= link_to item.title, item_path(item) %></h3>
+		<h3>Description: <%= item.description %></h3>
+		<h3>Price: <%= item.price %></h3>
+		<% if item.active? %>
 		<%= link_to "Add to Cart", cart_path(item_id: item.id), method: :post %>
-	<% else %>
+		<% else %>
 		<p>Item Retired</p>
-		<!-- make this into something OTHER than a p tag - ugly  -->
-	<% end %>
+		<% end %>
+  </div>
+</div>
 <% end %>
+</section>
