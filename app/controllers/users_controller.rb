@@ -16,6 +16,23 @@ class UsersController < ApplicationController
     end
   end
 
+	def edit
+		@user = User.find(current_user.id)
+	end 
+
+	def update
+		user = User.find(current_user.id])
+		user.update(user_params)
+
+		if user.save 
+			flash[:notice] = "Account Information Updated!"
+			redirect_to '/dashboard'
+		else 
+			flash[:notice] = "Something Went Wrong! Try Again!"
+			render :edit
+		end 
+	end 
+
   private
 
   def user_params

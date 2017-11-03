@@ -32,7 +32,7 @@
         </div>
     </li>
     <li><%= link_to "View Cart", "/cart" %></li>
-    <div class="cart"><h3><%= session[:cart].values.sum %></h3>
+    <div class="cart"><h3><%= session[:cart].values.sum unless session[:cart].nil? %></h3>
       <%= image_tag ("cart.png"), size: "30x30" %></div>
   </ul>
   <% flash.each do |type, message| %>
