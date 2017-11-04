@@ -6,6 +6,14 @@ class Order < ApplicationRecord
   enum status: [:ordered, :paid, :cancelled, :completed]
 
   def total
-    sprintf('%.2f', items.sum(:price))
+    items.sum(:price)
+  end
+
+  def quantity(id)
+    item_ids.count(id)
+  end
+
+  def subtotal(item)
+    item.price * quantity(item.id)
   end
 end

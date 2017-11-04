@@ -3,14 +3,14 @@
 <% @cart.items.each do |item| %>
   <%= item.title %>
   <%= item.description %>
-  <%= sprintf('%.2f',item.price) %>
+  <%= number_to_currency(item.price) %>
 	<%= @cart.contents[item.id.to_s] %>
   <%= item.image %>
   <%= link_to "Remove", cart_path(item_id: item.id), method: :delete %>
 	<%= render partial: "form", locals: {item: item} %>
 <% end %>
 
-<h3>Total Price: <%=@cart.total%></h3>
+<h3>Total Price: <%=number_to_currency(@cart.total)%></h3>
 <br>
   <% if current_user %>
 		<h4><%= link_to"Checkout", orders_path, method: "post" %></h4>
