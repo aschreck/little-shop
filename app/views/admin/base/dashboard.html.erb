@@ -1,1 +1,23 @@
 <h1>Admin Dashboard</h1>
+<table style=“width:100%“>
+  <tr>
+    <th>Ordered: <%= Order.ordered.count %></th>
+    <th>Paid: <%= Order.paid.count %></th>
+    <th>Cancelled: <%= Order.cancelled.count %></th>
+    <th>Completed: <%= Order.completed.count %></th>
+  </tr>
+  <tr>
+    <% Order.ordered.each do |order| %>
+    <td><%= link_to "Show Order number #{order.id}", order_path(order)%></td>
+    <% end %>
+    <% Order.paid.each do |order| %>
+    <td><%= link_to "Show Order number #{order.id}", order_path(order)%></td>
+    <% end %>
+    <% Order.cancelled.each do |order| %>
+    <td><%= link_to "Show Order number #{order.id}", order_path(order)%></td>
+    <% end %>
+    <% Order.completed.each do |order| %>
+    <td><%= link_to "Show Order number #{order.id}", order_path(order)%></td>
+    <% end %>
+  </tr>
+</table>

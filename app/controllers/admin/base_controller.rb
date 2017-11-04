@@ -3,6 +3,7 @@ class Admin::BaseController < ApplicationController
 
   def dashboard
     @admin = User.find(session[:user_id])
+		@orders = Order.all
   end
 
   private
