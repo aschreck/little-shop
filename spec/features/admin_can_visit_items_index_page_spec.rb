@@ -13,7 +13,6 @@ describe "when an admin visits the admin dashboard" do
 
     click_on "Items"
 
-    save_and_open_page
     expect(current_path).to eq("/admin/items")
     expect(page).to have_content("Soggy Cereal")
     expect(page).to have_content("Thing")
