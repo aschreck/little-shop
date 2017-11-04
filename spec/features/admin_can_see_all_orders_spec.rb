@@ -3,8 +3,8 @@ describe "When a admin logs in" do
 	it "they see a dashboard with all orders" do
 		category = Category.create(title: "Breakfast")
     item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 1.50, image: "asdfs")
-		user = User.create(name: "Ralph", username: "RalphBoy84", password: "password")
-		admin = User.create(name: "Doug", username: "DougBoy84", password: "password", role: "admin")
+		user = User.create(name: "Ralph", username: "RalphBoy84", password: "password", address: "1234 Rails St")
+		admin = User.create(name: "Doug", username: "DougBoy84", password: "password", role: "admin", address: "1234 Rails St")
 		visit '/login'
 		fill_in "session[username]", with: "DougBoy84"
     fill_in "session[password]", with: "password"

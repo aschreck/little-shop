@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "when a user visits their dashboard and clicks edit account" do
 	it "they see a form and can fill it out and click submit to edit their account" do
-		user = User.create(name: "Ralph", username: "user", password: "user")
+		user = User.create(name: "Ralph", username: "user", password: "user", address: "1234 Rails St")
 
 		visit '/login'
 		fill_in "session[username]", with: "user"
@@ -24,4 +24,4 @@ describe "when a user visits their dashboard and clicks edit account" do
 		expect(page).to have_content("David")
 	end
 
-end 
+end

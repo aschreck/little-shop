@@ -6,7 +6,7 @@
 </div>
 <% end %>
 <p><%= @order.status %></p>
-<p><%= @order.total %></p>
+<p><%= number_to_currency(@order.total) %></p>
 <p><%= @order.created_at %></p>
 
 <%= @order.updated_at if @order.completed? || @order.cancelled?  %>

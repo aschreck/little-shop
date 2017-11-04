@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'When a logged in user visits /orders' do
   it 'they see a list of their orders' do
-    user = User.create(username: "user", password: "password", name: "Person")
+    user = User.create(username: "user", password: "password", name: "Person", address: "1234 Rails St")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     order_1 = Order.create(status: 3, user: user)
     order_2 = Order.create(status: 3, user: user)
@@ -16,7 +16,7 @@ describe 'When a logged in user visits /orders' do
   end
 
   it "they see a link to go to order show page" do
-    user = User.create(username: "user", password: "password", name: "Person")
+    user = User.create(username: "user", password: "password", name: "Person", address: "1234 Rails St")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     category = Category.create(title: "Stuff")
     item = category.items.create(title: "Thing", description: "Its a thing", price: 10.00, image: "thing.png")

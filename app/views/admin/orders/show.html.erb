@@ -1,0 +1,14 @@
+<h1> <%= @order.user.name %> </h1>
+<h2> <%= @order.user.address %></h2>
+<h3> <%= @order.created_at %> </h3>
+
+<ul>
+  <%= @order.items.uniq.each do |item| %>
+  <h2> Item: <%= link_to item.title, item_path(item) %></h2>
+  <li> Quantity: <%= @order.quantity(item.id) %></li>
+  <li> Price: <%= number_to_currency(item.price) %></li>
+  <li> Subtotal: <%= @order.subtotal(item)%></li>
+  <% end %>
+</ul>
+<h3>Status: <%= @order.status %></h3>
+<h3>Total: <%= number_to_currency(@order.total) %></h3>

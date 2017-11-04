@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "when user is not logged in he cannot see checkout" do
   it "should not have content checkout" do
-    user = User.create(name: "Bob", username: "bobby", password: "1234")
+    user = User.create(name: "Bob", username: "bobby", password: "1234", address: "1234 Rails St")
     visit cart_path
     category = Category.create(title: "Breakfast")
     item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 1.50, image: "asdfs")
