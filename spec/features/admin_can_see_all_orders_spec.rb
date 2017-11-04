@@ -21,17 +21,5 @@ describe "When a admin logs in" do
 		expect(page).to have_content("Ordered")
 		expect(page).to have_content("Paid")
 		expect(page).to have_content("Completed")
-
-		click_on "Ordered:"
-
-		expect(page).to_not have_content("Show Order number 2")
-
-		click_on "Paid:"
-
-		expect(page).to_not have_content("Show Order number 1")
-
-		click_on "Completed:"
-
-		expect(page).to_not have_content("Show Order number 2")
 	end
 end

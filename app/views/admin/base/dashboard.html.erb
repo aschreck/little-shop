@@ -8,8 +8,8 @@
   </ul>
     <% @orders.each do |order| %>
       <%= link_to "Show Order number #{order.id}", order_path(order) %><br>
-      <%= link_to "cancel", order_path(id: order.id, status: "cancelled"), method: :patch if order.paid? || order.ordered? %><br>
-      <%= link_to "mark as paid", order_path(id: order.id, status: "paid"), method: :patch if order.ordered? %><br>
-      <%= link_to "mark as completed", order_path(id: order.id, status: "completed"), method: :patch if order.paid? %><br>
+      <%= link_to "cancel", admin_order_path(order, status: "cancelled"), method: :patch if order.paid? || order.ordered? %><br>
+      <%= link_to "mark as paid", admin_order_path(order, status: "paid"), method: :patch if order.ordered? %><br>
+      <%= link_to "mark as completed", admin_order_path(order, status: "completed"), method: :patch if order.paid? %><br>
     <% end %>
 </table>
