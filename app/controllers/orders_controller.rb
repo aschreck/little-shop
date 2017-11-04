@@ -18,4 +18,9 @@ class OrdersController < ApplicationController
 		session.delete(:cart)
 		redirect_to orders_path
 	end
+
+  def update
+    byebug
+    order
+  end
 end

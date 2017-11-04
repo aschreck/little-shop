@@ -1,3 +1,4 @@
+require "rails_helper"
 describe "When a admin logs in" do
 	it "they see a dashboard with all orders" do
 		category = Category.create(title: "Breakfast")
@@ -16,10 +17,21 @@ describe "When a admin logs in" do
 		user.orders.create(status: "completed")
 
 		visit admin_dashboard_path
-		save_and_open_page
+
 		expect(page).to have_content("Ordered")
 		expect(page).to have_content("Paid")
 		expect(page).to have_content("Completed")
-		
-	end 
-end 
+
+		click_on "Ordered:"
+
+		expect(page).to_not have_content("Show Order number 2")
+
+		click_on "Paid:"
+
+		expect(page).to_not have_content("Show Order number 1")
+
+		click_on "Completed:"
+
+		expect(page).to_not have_content("Show Order number 2")
+	end
+end
