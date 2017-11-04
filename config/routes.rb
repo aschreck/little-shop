@@ -5,9 +5,9 @@ Rails.application.routes.draw do
     get '/dashboard', to: "base#dashboard"
   end
 
-  resources :items, only: [:index]
+  resources :items, only: [:index, :show]
   resource :cart, only: [:show, :create, :destroy, :update]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :edit, :update]
   resources :orders, only: [:index, :show, :create]
 
   get '/dashboard', to: "base#dashboard"

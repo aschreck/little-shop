@@ -18,7 +18,6 @@
  }
 
 .title {
-  margin-bottom: 3px;
   background-color: ghostwhite;
   display: flex;
   justify-content: space-between;
@@ -27,11 +26,14 @@
   margin: 10px;
   font-size: 25px;
   text-decoration: none;
+} .title h3 {
+  margin-top: 28px;
 }
 
 .icon {
   display: flex;
   justify-content: space-between;
+  margin: 10px;
 } .icon h1{
   font-size: 35px;
   margin: 10px;
@@ -49,6 +51,7 @@ ul {
 
 li {
     float: left;
+    font-size: 25px;
 }
 
 li a, .dropbtn {
@@ -88,4 +91,56 @@ li.dropdown {
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+.home_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5%;
+}
+
+div.polaroid {
+  width: 60%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+} div.polaroid img{
+  width: 100%
+}
+
+div.container {
+  text-align: center;
+  padding: 10px 20px;
+}
+
+div.items-index {
+  width: 25%;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+} div.items-index img{
+  width: 100%;
+}
+
+.items {
+  margin: 10px;
+  display: flex;
+  justify-content: space-around;;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+}
+
+.cart {
+  display: flex;
+  margin-top: 10px;
+  color: white;
+} .cart a{
+  font-size: 20px;
+  color: white;
+} .cart h3{
+  margin: 8px 0px;
 }
