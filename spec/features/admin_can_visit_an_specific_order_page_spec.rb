@@ -9,8 +9,8 @@ describe "when admin clicks on link to change order" do
     click_button "Log In"
     user = User.create(name: "Ralph", username: "RalphBoy84", password: "password", address: "1234 Rails St")
     category = Category.create(title: "Breakfast")
-    item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 3.35, image: "asdfs")
-    item_1 = category.items.create(title: "Thing", description: "Its a thing", price: 10.00, image: "thing.png")
+    item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 3.35)
+    item_1 = category.items.create(title: "Thing", description: "Its a thing", price: 10.00)
     order = user.orders.create(status: "ordered", item_ids:[item.id, item.id,  item_1.id])
 
     visit admin_dashboard_path
