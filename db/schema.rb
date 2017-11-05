@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171102173237) do
+ActiveRecord::Schema.define(version: 20171104205251) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20171102173237) do
     t.string "title"
     t.text "description"
     t.float "price"
-    t.string "image"
+    t.string "image", default: "pumpkin.png"
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -58,6 +58,7 @@ ActiveRecord::Schema.define(version: 20171102173237) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role", default: 0
+    t.string "address"
   end
 
   add_foreign_key "orders", "users"

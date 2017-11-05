@@ -1,0 +1,9 @@
+<%= form_for [:admin, @item] do |f|%>
+
+  <%= f.text_field :title, placeholder: "Title" %>
+  <%= f.number_field :price, placeholder: "Price" %>
+  <%= f.text_field :image, placeholder: "Image" %>
+  <%= f.text_area :description, placeholder: "Description" %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,7 +1,7 @@
 require "rails_helper"
 describe "when admin can visit admin dashboard" do
   it "they see the admin dashboard page" do
-    user = User.create(name: "Bob", username: "bobby", password: "1234", role: "admin")
+    user = User.create(name: "Bob", username: "bobby", password: "1234", role: "admin", address: "1234 Rails St")
 
     visit login_path
 
@@ -15,7 +15,7 @@ describe "when admin can visit admin dashboard" do
   end
 
   it "they do not see the admin dashboard page if they are a user" do
-    user = User.create(name: "Bob", username: "bobby", password: "1234")
+    user = User.create(name: "Bob", username: "bobby", password: "1234", address: "1234 Rails St")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 
     visit admin_dashboard_path
