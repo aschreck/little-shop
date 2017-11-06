@@ -1,2 +1,10 @@
 <body class="home">
+  <% if !session[:user_id] %>
+  <div class="sign-up">
+    <h1> <%= link_to "Sign Up!", new_user_path unless current_user%> </h1>
+    <div class="home-form">
+      <h3><%= render partial: "users/form" %></h3>
+    </div>
+  </div>
+  <% end %>
 </body>

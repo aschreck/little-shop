@@ -19,7 +19,7 @@ describe 'When a logged in user visits /orders' do
     user = User.create(username: "user", password: "password", name: "Person", address: "1234 Rails St")
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
     category = Category.create(title: "Stuff")
-    item = category.items.create(title: "Thing", description: "Its a thing", price: 10.00, image: "thing.png")
+    item = category.items.create(title: "Thing", description: "Its a thing", price: 10.00)
     order_1 = Order.create(status: 3, user: user, item_ids: [item.id, item.id])
 
     visit orders_path
