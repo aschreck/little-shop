@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem 'test-unit'
 gem 'will_paginate', '~> 3.1.0'
+gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
 
 
 # Use Capistrano for deployment
@@ -48,7 +49,7 @@ group :development do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
-  gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+  #gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
   gem 'launchy'
   gem 'orderly'
   gem 'pry'
