@@ -127,6 +127,37 @@ li.dropdown {
   justify-content: space-around;
 }
 
+.sign-up {
+  margin: 3%;
+  float: right;
+  width: 19%;
+  height: 64%;
+  background-color: #13141e;
+} .sign-up h1{
+  justify-content: center;
+  display: flex;
+} .sign-up h1 a{
+  color: white;
+  text-decoration: none;
+}
+
+.home-form{
+  display: flex;
+  justify-content: center;
+  height: 85%;
+} .home-form form{
+  height: 85%;
+} .home-form label{
+  color: white;
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+} .home-form button{
+  color: white;
+  background-color: black;
+}
+
+
 /**/
 
 div.items-index {
