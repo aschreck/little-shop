@@ -1,4 +1,4 @@
-class Admin::ItemsController < BaseController
+class Admin::ItemsController < Admin::BaseController
 
   def index
     @items = Item.all
@@ -10,7 +10,11 @@ class Admin::ItemsController < BaseController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_params)
+    if params[:item]
+      @item.update(item_params)
+    else
+      @item.update(status: params[:status])
+    end
     if @item.save
       flash[:notice] = "The item was updated!"
       redirect_to admin_items_path
@@ -22,7 +26,7 @@ class Admin::ItemsController < BaseController
   private
 
   def item_params
-    params.require(:item).permit(:title, :description, :price, :image)
+    params.require(:item).permit(:title, :description, :price, :image, :status)
   end
 
 end

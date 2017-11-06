@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>LittleShop</title>
+    <title>Little Nightmares</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -45,5 +45,14 @@
   </div>
  <% end %>
     <%= yield %>
+    <div class="footer">
+      <div class="footer-helper">
+      <h1> <%= link_to "Orders", admin_orders_path if current_admin? %></h1>
+      <h1> <%= link_to "Orders", orders_path if session[:user_id] && !current_admin? %></h1>
+      <h1> <%= link_to "Sign Up!", new_user_path unless current_user%> </h1>
+      <h1> <%= link_to "Admin Dashboard", admin_dashboard_path if current_admin? %></h1>
+      <h1> <%= link_to "Dashboard", dashboard_path if session[:user_id] && !current_admin?%> </h1>
+    </div>
+    </div>
   </body>
 </html>

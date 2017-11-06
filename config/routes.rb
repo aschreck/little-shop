@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get '/dashboard', to: "base#dashboard"
-    resources :orders, only: [:update, :show]
+    resources :orders, only: [:index, :update, :show]
     resources :items, only: [:index, :edit, :update]
   end
 
