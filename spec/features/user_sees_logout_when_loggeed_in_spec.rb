@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "when a user is logged in" do
   it "shows logout" do
-    user = User.create(name: "Bob", username: "bobby", password: "1234")
+    user = User.create(name: "Bob", username: "bobby", password: "1234", address: "1234 Rails St")
 
     visit login_path
 

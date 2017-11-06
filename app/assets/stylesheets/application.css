@@ -13,16 +13,21 @@
  *= require_tree .
  *= require_self
  */
+
+ html {
+   height: 100%;
+ }
+
  body {
    margin: 0px;
  }
 
 .title {
-  background-color: ghostwhite;
+  background-color: black;
   display: flex;
   justify-content: space-between;
 } .title a {
-  color: red;
+  color: wheat;
   margin: 10px;
   font-size: 25px;
   text-decoration: none;
@@ -37,6 +42,7 @@
 } .icon h1{
   font-size: 35px;
   margin: 10px;
+  color: wheat;
 }
 
 ul {
@@ -93,28 +99,43 @@ li.dropdown {
     display: block;
 }
 
-.home_img {
+/*Home Page*/
+
+.home {
+  background-image: url(https://images.unsplash.com/photo-1508931133503-b1944a4ecdd5?auto=format&fit=crop&w=3300&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  background-size: cover;
+  opacity: 0.7;
+  height: 100%;
+}
+
+.footer {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5%;
+  justify-content: space-around;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  background-color: #1a1622;
+} .footer a {
+    color: white;
+    text-decoration: none;
+  }
+
+.footer:hover{
+  height: 20%;
+  font-size: 40px;
 }
 
-div.polaroid {
-  width: 60%;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  margin-bottom: 25px;
-} div.polaroid img{
-  width: 100%
+.footer-helper {
+  width: 80%;
+  display: flex;
+  justify-content: space-around;
 }
 
-div.container {
-  text-align: center;
-  padding: 10px 20px;
-}
+/**/
 
 div.items-index {
+  margin: 5px;
   width: 25%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -126,7 +147,8 @@ div.items-index {
 .items {
   margin: 10px;
   display: flex;
-  justify-content: space-around;;
+  justify-content: space-around;
+  flex-wrap: wrap;
 }
 
 .header {
@@ -143,4 +165,12 @@ div.items-index {
   color: white;
 } .cart h3{
   margin: 8px 0px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+} .pagination a {
+  font-size: 20px;
 }

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :categories
+  helper_method :current_user, :categories, :current_admin?
 
   private
 
