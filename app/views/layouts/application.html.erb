@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Little Nightmares</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -20,25 +21,25 @@
       <h3><%= link_to "Login", login_path %></h4>
         <% end %>
     </header>
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <% if current_admin? %>
-      <li><%= link_to "Items", admin_items_path %></li>
-    <% else %>
-      <li><%= link_to "Items", items_path %></li>
-    <% end %>
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Categories</a>
-        <div class="dropdown-content">
-          <% categories.each do |category| %>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <% if current_admin? %>
+        <li><%= link_to "Items", admin_items_path %></li>
+        <% else %>
+        <li><%= link_to "Items", items_path %></li>
+        <% end %>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Categories</a>
+          <div class="dropdown-content">
+            <% categories.each do |category| %>
             <%= link_to category.title, "/#{category.title}" %>
-          <% end %>
-        </div>
-    </li>
-    <li><%= link_to "View Cart", "/cart" %></li>
-    <div class="cart"><h3><%= session[:cart].values.sum unless session[:cart].nil? %></h3>
-      <%= image_tag ("cart.png"), size: "30x30" %></div>
-  </ul>
+            <% end %>
+          </div>
+        </li>
+        <li><%= link_to "View Cart", "/cart" %></li>
+        <div class="cart"><h3><%= session[:cart].values.sum unless session[:cart].nil? %></h3>
+          <%= image_tag ("cart.png"), size: "30x30" %></div>
+        </ul>
   <% flash.each do |type, message| %>
 	<div class="green-flash">
     	<p><%= sanitize(message) %></p>
