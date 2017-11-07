@@ -1,0 +1,21 @@
+<h1>Categories</h1>
+<div class="category-index">
+  <% @categories.each do |category| %>
+    <h1><%= link_to category.title, "/#{category.title}"%></h1>
+    <table class="table">
+      <tr>
+        <th>Amount of Items</th>
+        <th>Average Price</th>
+        <th>Active</th>
+        <th>Retired</th>
+      </tr>
+      <tr>
+        <td><%= category.items.count %></td>
+        <td><%= number_to_currency(category.average_price)%></td>
+        <td><%= category.active? %></td>
+        <td><%= category.retired? %></td>
+      </tr>
+
+    </table>
+  <% end %>
+</div>

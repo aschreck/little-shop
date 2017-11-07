@@ -1,1 +1,16 @@
-<%= render partial: "form" %>
+<body class="clown">
+  <div class="login-page">
+    <%= form_for(@user) do |f| %>
+      <h1><%= f.label :name %></h1><br>
+      <p><%= f.text_field :name %></p><br>
+
+      <h1><%= f.label :username %></h1><br>
+      <p><%= f.text_field :username %></p><br>
+
+      <h1><%= f.label :password %></h1><br>
+      <p><%= f.password_field :password %></p><br>
+
+      <p><%= f.button %></p>
+    <% end %>
+  </div>
+</body>

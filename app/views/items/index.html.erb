@@ -10,9 +10,9 @@
 		<h3>Description: <%= item.description %></h3>
 		<h3>Price: <%= number_to_currency(item.price) %></h3>
 		<% if item.active? %>
-		<%= link_to "Add to Cart", cart_path(item_id: item.id), method: :post %>
+		<h4><%= link_to "Add to Cart", cart_path(item_id: item.id), method: :post %></h4>
 		<% else %>
-		<p>Item Retired</p>
+		<h4>Item Retired</h4>
 		<% end %>
   </div>
 </div>

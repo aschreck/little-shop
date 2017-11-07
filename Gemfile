@@ -40,6 +40,14 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'shoulda'
   gem 'shoulda-matchers', '~> 3.1'
+  gem 'capybara'
+  gem 'database_cleaner'
+  gem 'factory_bot_rails'
+  gem 'launchy'
+  gem 'orderly'
+  gem 'pry'
+  gem 'pry-rails', :group => :development
+  gem 'rspec-rails'
 end
 
 group :development do
@@ -49,7 +57,6 @@ group :development do
   gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_bot_rails'
-  #gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
   gem 'launchy'
   gem 'orderly'
   gem 'pry'
