@@ -16,7 +16,6 @@ describe "when admin clicks on link to change order" do
     visit admin_dashboard_path
 
     click_on "Show Order Number 1"
-    save_and_open_page
 
     expect(current_path).to eq("/admin/orders/1")
     expect(page).to have_content(user.name)

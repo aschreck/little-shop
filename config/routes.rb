@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get    '/login',         to: 'sessions#new'
   post   '/login',         to: 'sessions#create'
   delete '/logout',        to: 'sessions#destroy'
-  get    '/:title',        to: 'categories#show'
 	patch  '/cart/add',      to: "carts#add"
-	patch	 '/cart/subtract', to: "carts#subtract"  
+	patch	 '/cart/subtract', to: "carts#subtract"
+  get    '/:title',        to: 'categories#show'
 end

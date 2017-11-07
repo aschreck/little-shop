@@ -111,6 +111,16 @@ li.dropdown {
   background-color: #2b2b2d;
 }
 
+td {
+  margin: 5%;
+  text-align: center;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 /*Home Page*/
 
 .home {
@@ -120,23 +130,19 @@ li.dropdown {
   height: 100%;
 }
 
-.footer {
+.order-header{
   display: flex;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 10%;
-  background-color: #1a1622;
-} .footer a {
-    color: white;
-    text-decoration: none;
-  }
+  justify-content: space-between;
+} .order-header h1{
+  padding-top: 9%;
+  margin: 0;
+  font-size: 35px;
+}
 
-.footer-helper {
-  width: 80%;
-  display: flex;
-  justify-content: space-around;
+.dashboard-header h1{
+  padding-top: 6%;
+  margin: 0;
+  font-size: 35px;
 }
 
 .sign-up {
@@ -214,3 +220,16 @@ div.items-index {
 } .pagination a {
   font-size: 20px;
 }
+
+h1, h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.table th{
+font-size: x-large;
+} .table td {
+  margin: 5%;
+  text-align: center;
+  border: wheat solid;
+  }
