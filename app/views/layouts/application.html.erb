@@ -38,13 +38,6 @@
         </li>
         <li><%= link_to "View Cart", "/cart" %></li>
 
-
-
-
-
-
-
-
   <div class="w3-container">
     <button onclick="document.getElementById('id01').style.display='block'" class="w3-button">
       <h3><%= session[:cart].values.sum unless session[:cart].nil? %></h3>
@@ -65,18 +58,20 @@
                 <th>Title</th>
                 <th>Description</th>
                 <th>Price</th>
-                <th>Contents</th>
+                <th>Quantity</th>
                 <th>Remove</th>
-                <th>Quantity</td>
               </tr>
               <tr>
                 <td><%= image_tag item.image, size: "30x30" %></td>
                 <td><%= item.title %></td>
                 <td><%= item.description %></td>
                 <td><%= number_to_currency(item.price) %></td>
-              	<td><%= set_cart.contents[item.id.to_s] %></td>
+              	<td class="quantity">
+                    <%= button_to "+", cart_add_path(item_id: item.id), method: :patch%>
+                    <%= set_cart.contents[item.id.to_s] %>
+                    <%= button_to "-", cart_subtract_path(item_id: item.id), method: :patch%>
+                </td>
                 <td><%= link_to "Remove", cart_path(item_id: item.id), method: :delete %></td>
-              	<td><%= render partial: "carts/form", locals: {item: item} %></td>
               </tr>
               <% end %>
             </table>
