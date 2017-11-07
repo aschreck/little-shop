@@ -23,7 +23,9 @@ describe "When a user adds items to their cart and visits cart page" do
 
 		visit "/cart"
 
-		click_on "Checkout"
+		within("#only") do
+			click_on "Checkout"
+		end
 
 		expect(current_path).to eq("/orders")
 		expect(page).to have_content("Order was successfully placed")
