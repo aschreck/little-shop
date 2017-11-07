@@ -8,11 +8,14 @@ describe "User visits /cart with items in the cart." do
 		click_link "Add to Cart"
 
 		click_on "View Cart"
-		fill_in "item[quantity]", with: 2
-		click_on "Submit"
-
+		save_and_open_page
+		within(".table") do
+			click_button "+"
+		end 
 		expect(page).to have_content(2)
-
+		within(".table") do
+			click_button "+"
+		end 
 		expect(page).to have_content(3)
 	end
 
