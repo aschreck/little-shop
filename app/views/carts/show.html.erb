@@ -1,6 +1,6 @@
 <h1>Welcome to your cart!</h1>
 
-<table style="width:100%">
+<table style="width:100%" class="table">
   <tr>
     <th>Image</th>
     <th>Title</th>
@@ -28,7 +28,7 @@
 <h3>Total Price: <%=number_to_currency(@cart.total)%></h3>
 <br>
   <% if current_user %>
-		<h4><%= link_to"Checkout", orders_path, method: "post" %></h4>
+		<h4 id="only"><%= link_to"Checkout", orders_path, method: "post" %></h4>
   <% else %>
 	  <h4><%= link_to "Login or Create Account to Checkout", login_path %></h4>
   <% end %>

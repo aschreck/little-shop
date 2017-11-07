@@ -18,7 +18,7 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(current_user.id)
-    if @user.id != params[:id]
+    if @user.id != params[:id].to_i
         render file: "/public/404"
     end
 	end

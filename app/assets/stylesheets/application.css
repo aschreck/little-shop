@@ -220,3 +220,16 @@ div.items-index {
 } .pagination a {
   font-size: 20px;
 }
+
+h1, h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.table th{
+font-size: x-large;
+} .table td {
+  margin: 5%;
+  text-align: center;
+  border: wheat solid;
+  }
