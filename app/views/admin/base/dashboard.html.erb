@@ -1,15 +1,15 @@
 <h1>Admin Dashboard</h1>
-<table style=“width:100%“>
-  <ul>
-    <li> <%= link_to "Ordered:", "/admin/dashboard?status=ordered" %> <%= Order.ordered.count %></li>
-    <li> <%= link_to "Paid:", "/admin/dashboard?status=paid" %> <%= Order.paid.count %></li>
-    <li> <%= link_to "Cancelled:", "/admin/dashboard?status=cancelled" %><%= Order.cancelled.count %></li>
-    <li> <%= link_to "Completed:", "/admin/dashboard?status=completed" %> <%= Order.completed.count %></li>
-  </ul>
+<table class="table">
+  <tr>
+    <th> <%= link_to "Ordered:", "/admin/dashboard?status=ordered" %> <%= Order.ordered.count %></th>
+    <th> <%= link_to "Paid:", "/admin/dashboard?status=paid" %> <%= Order.paid.count %></th>
+    <th> <%= link_to "Cancelled:", "/admin/dashboard?status=cancelled" %><%= Order.cancelled.count %></th>
+    <th> <%= link_to "Completed:", "/admin/dashboard?status=completed" %> <%= Order.completed.count %></th>
+  </tr>
+</table>
     <% @orders.each do |order| %>
       <%= link_to "Show Order Number #{order.id}", admin_order_path(order) %><br>
       <%= link_to "cancel", admin_order_path(order, status: "cancelled"), method: :patch if order.paid? || order.ordered? %><br>
       <%= link_to "mark as paid", admin_order_path(order, status: "paid"), method: :patch if order.ordered? %><br>
       <%= link_to "mark as completed", admin_order_path(order, status: "completed"), method: :patch if order.paid? %><br>
     <% end %>
-</table>
