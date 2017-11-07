@@ -13,6 +13,7 @@ describe "when a user visits their dashboard and clicks edit account" do
 		click_on "Edit Account"
 
 		expect(current_path). to eq(edit_user_path(user))
+		fill_in "user[name]", with: "David"
 		fill_in "user[username]", with: "user"
 		fill_in "user[password]", with: "pass"
 

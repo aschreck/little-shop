@@ -11,9 +11,9 @@ describe "when user is not logged in he cannot see checkout" do
     click_link "Add to Cart"
 
     click_on "View Cart"
-    fill_in "item[quantity]", with: 2
-    click_on "Submit"
-
+    within(".only_1") do
+      click_on "Login or Create Account to Checkout"
+    end
     expect(page).to have_content("Login or Create Account to Checkout")
 
     click_on "Login or Create Account to Checkout"
@@ -30,10 +30,12 @@ describe "when user is not logged in he cannot see checkout" do
 
     expect(page).to have_content("Logout")
     click_on "View Cart"
+    within(".table") do
+      click_on("+")
+    end
 
     expect(page).to have_content("Checkout")
     expect(page).to have_content(2)
-    expect(page).to have_content(3)
   end
 
 end
