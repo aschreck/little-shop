@@ -23,7 +23,7 @@ describe "When a user adds items to their cart and visits cart page" do
 
 		visit "/cart"
 
-		within("#only") do
+		within(".only") do
 			click_on "Checkout"
 		end
 
