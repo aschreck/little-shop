@@ -22,6 +22,7 @@ describe "When a user adds items to their cart and visits cart page" do
 		click_on "Add to Cart"
 
 		visit "/cart"
+		byebug
 
 		click_on "Checkout"
 

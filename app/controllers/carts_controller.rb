@@ -25,4 +25,19 @@ class CartsController < ApplicationController
     flash[:notice] = %Q[Successfully removed <a href="/items/#{item.id}">#{item.title}</a> from your cart.]
     redirect_to cart_path
   end
+
+	def add
+		value = session[:cart][params["item_id"]]
+		session[:cart][params["item_id"]] = value + 1  
+    redirect_to cart_path
+	end 
+
+	def subtract
+		value = session[:cart][params["item_id"]]
+		session[:cart][params["item_id"]] = value - 1  
+		if session[:cart][params["item_id"]] == 0
+			session[:cart].delete(params[:item_id])
+		end 
+    redirect_to cart_path
+	end 
 end
