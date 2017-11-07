@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-  helper_method :current_user, :categories, :current_admin?
+  helper_method :current_user, :categories, :current_admin?, :set_cart
 
   private
 
@@ -19,5 +19,9 @@ class ApplicationController < ActionController::Base
 
   def current_user?
     render file: "/public/404" unless current_user
+  end
+
+  def set_cart
+    Cart.new(session[:cart]) || Cart.new()
   end
 end
