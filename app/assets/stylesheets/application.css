@@ -256,3 +256,28 @@ font-size: x-large;
 } .category-index h1 a{
     text-decoration: none;
   }
+
+.clown{
+  background-image: url(https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=1922&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  background-size:cover;
+  height: 100%;
+}
+
+.login-page {
+  height: 70%;
+  width: 22%;
+  margin: 4%;
+} .login-page h1{
+  color: wheat;
+  margin: 1%;
+  } .login-page p{
+    margin: 0;
+    text-align: center;
+  } .login-page p button {
+    width: 50%;
+    background-color: wheat;
+    color: black;
+  } .login-page h3 a{
+    color: wheat;
+    text-decoration: none;
+  }
