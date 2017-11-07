@@ -4,7 +4,7 @@
     <title>Little Nightmares</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -37,9 +37,61 @@
           </div>
         </li>
         <li><%= link_to "View Cart", "/cart" %></li>
-        <div class="cart"><h3><%= session[:cart].values.sum unless session[:cart].nil? %></h3>
-          <%= image_tag ("cart.png"), size: "30x30" %></div>
-        </ul>
+
+
+
+
+
+
+
+
+  <div class="w3-container">
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button">
+      <h3><%= session[:cart].values.sum unless session[:cart].nil? %></h3>
+      <%= image_tag ("cart.png"), size: "30x30" %>
+    </button>
+    <div id="id01" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content w3-card-4">
+        <header class="w3-container w3-teal">
+          <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-large w3-display-topright">&times;</span>
+          <h2>Your Cart</h2>
+        </header>
+        <div class="w3-container">
+          <% set_cart.items.each do |item| %>
+            <table style="width:100%">
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Contents</th>
+                <th>Remove</th>
+                <th>Quantity</td>
+              </tr>
+              <tr>
+                <td><%= image_tag item.image, size: "30x30" %></td>
+                <td><%= item.title %></td>
+                <td><%= item.description %></td>
+                <td><%= number_to_currency(item.price) %></td>
+              	<td><%= set_cart.contents[item.id.to_s] %></td>
+                <td><%= link_to "Remove", cart_path(item_id: item.id), method: :delete %></td>
+              	<td><%= render partial: "carts/form", locals: {item: item} %></td>
+              </tr>
+              <% end %>
+            </table>
+        </div>
+        <footer class="w3-container w3-teal">
+          <% if current_user %>
+            <h4><%= link_to"Checkout", orders_path, method: "post" %></h4>
+          <% else %>
+            <h4><%= link_to "Login or Create Account to Checkout", login_path %></h4>
+          <% end %>
+        </footer>
+      </div>
+    </div>
+  </div>
+</ul>
   <% flash.each do |type, message| %>
 	<div class="green-flash">
     	<p><%= sanitize(message) %></p>
