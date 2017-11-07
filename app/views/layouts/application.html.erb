@@ -51,7 +51,6 @@
           <h2>Your Cart</h2>
         </header>
         <div class="w3-container">
-          <% set_cart.items.each do |item| %>
             <table style="width:100%">
               <tr>
                 <th>Image</th>
@@ -61,6 +60,7 @@
                 <th>Quantity</th>
                 <th>Remove</th>
               </tr>
+              <% set_cart.items.each do |item| %>
               <tr>
                 <td><%= image_tag item.image, size: "30x30" %></td>
                 <td><%= item.title %></td>
