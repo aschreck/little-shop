@@ -182,7 +182,7 @@ div.items-index {
   margin: 5px;
   width: 25%;
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
 } div.items-index img{
   width: 100%;
@@ -226,10 +226,58 @@ h1, h3 {
   justify-content: center;
 }
 
-.table th{
+.table{
+  width: 98%;
+  margin: 1%;
+} .table th{
 font-size: x-large;
 } .table td {
-  margin: 5%;
+  height: 70px;
   text-align: center;
   border: wheat solid;
+  overflow: scroll;
+  }
+
+.items-index{
+  border: black;
+}
+
+.container {
+  border-top: solid;
+  border-bottom: solid;
+} .container h3 {
+  color: border: wheat solid;
+} .container h4 {
+    text-align: center;
+  }
+
+.category-index{
+  border: solid;
+} .category-index h1 a{
+    text-decoration: none;
+  }
+
+.clown{
+  background-image: url(https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=1922&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  background-size:cover;
+  height: 100%;
+}
+
+.login-page {
+  height: 70%;
+  width: 22%;
+  margin: 4%;
+} .login-page h1{
+  color: wheat;
+  margin: 1%;
+  } .login-page p{
+    margin: 0;
+    text-align: center;
+  } .login-page p button {
+    width: 50%;
+    background-color: wheat;
+    color: black;
+  } .login-page h3 a{
+    color: wheat;
+    text-decoration: none;
   }

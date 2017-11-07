@@ -1,6 +1,6 @@
 <h1>Welcome to your cart!</h1>
 
-<table style="width:100%" class="table">
+<table class="table">
   <tr>
     <th>Image</th>
     <th>Title</th>
@@ -15,10 +15,12 @@
     <td><%= item.title %></td>
     <td><%= item.description %></td>
     <td><%= number_to_currency(item.price) %></td>
-    <td class="quantity">
+    <td>
+      <div class="quantity">
         <%= button_to "+", cart_add_path(item_id: item.id), method: :patch%>
         <%= set_cart.contents[item.id.to_s] %>
         <%= button_to "-", cart_subtract_path(item_id: item.id), method: :patch%>
+      </div>
     </td>
     <td><%= link_to "Remove", cart_path(item_id: item.id), method: :delete %></td>
   </tr>
