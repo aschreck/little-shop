@@ -27,7 +27,6 @@ describe "User visits /cart with items in the cart." do
 		end
 
 		expect(page).to have_content(2)
-
 	end
 
 end
