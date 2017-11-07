@@ -2,7 +2,7 @@ require "rails_helper"
 describe "When a admin logs in" do
 	it "they see a dashboard with all orders" do
 		category = Category.create(title: "Breakfast")
-    item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 1.50, image: "asdfs")
+    item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 1.50)
 		user = User.create(name: "Ralph", username: "RalphBoy84", password: "password", address: "1234 Rails St")
 		admin = User.create(name: "Doug", username: "DougBoy84", password: "password", role: "admin", address: "1234 Rails St")
 		visit '/login'

@@ -3,7 +3,7 @@ require 'rails_helper'
 describe 'Visitor visits a categories show page' do
   it "they see all items associated with that category" do
     category = Category.create(title: "Stuff")
-    item = category.items.create(title: "Thing", description: "Its a thing", price: 10.00, image: "thing.png")
+    item = category.items.create(title: "Thing", description: "Its a thing", price: 10.00)
 
 		visit "/#{category.title}"
 

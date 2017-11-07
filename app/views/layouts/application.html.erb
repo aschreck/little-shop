@@ -2,8 +2,9 @@
 <html>
   <head>
     <title>Little Nightmares</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <%= csrf_meta_tags %>
-
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
   </head>
@@ -14,45 +15,89 @@
         <%= image_tag ("crescent-moon.png") %>
         <h1>Little Nightmares</h1>
       </div>
-      <% if current_user %>
-      <h3><%= link_to "Logout", logout_path, method: :delete %></h4>
+      <div class="order-header">
+        <h1> <%= link_to "Orders", admin_orders_path if current_admin? %></h1>
+        <h1> <%= link_to "Orders", orders_path if session[:user_id] && !current_admin? %></h1>
+        <h1> <%= link_to "Admin Dashboard", admin_dashboard_path if current_admin? %></h1>
+        <h1> <%= link_to "Dashboard", dashboard_path if session[:user_id] && !current_admin?%> </h1>
+        <% if current_user %>
+        <h1><%= link_to "Logout", logout_path, method: :delete %></h1>
         <% else %>
-      <h3><%= link_to "Login", login_path %></h4>
+        <h1><%= link_to "Login", login_path %></h1>
         <% end %>
+      </div>
     </header>
-  <ul>
-    <li><%= link_to "Home", root_path %></li>
-    <% if current_admin? %>
-      <li><%= link_to "Items", admin_items_path %></li>
-    <% else %>
-      <li><%= link_to "Items", items_path %></li>
-    <% end %>
-    <li class="dropdown">
-      <a href="javascript:void(0)" class="dropbtn">Categories</a>
-        <div class="dropdown-content">
-          <% categories.each do |category| %>
+      <ul>
+        <li><%= link_to "Home", root_path %></li>
+        <% if current_admin? %>
+        <li><%= link_to "Items", admin_items_path %></li>
+        <% else %>
+        <li><%= link_to "Items", items_path %></li>
+        <% end %>
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Categories</a>
+          <div class="dropdown-content">
+            <% categories.each do |category| %>
             <%= link_to category.title, "/#{category.title}" %>
-          <% end %>
+            <% end %>
+          </div>
+        </li>
+        <li><%= link_to "View Cart", "/cart" %></li>
+
+  <div class="w3-container">
+    <button onclick="document.getElementById('id01').style.display='block'" class="w3-button">
+      <h3><%= session[:cart].values.sum unless session[:cart].nil? %></h3>
+      <%= image_tag ("cart.png"), size: "30x30" %>
+    </button>
+    <div id="id01" class="w3-modal w3-animate-opacity">
+      <div class="w3-modal-content w3-card-4">
+        <header class="w3-container w3-teal">
+          <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-large w3-display-topright">&times;</span>
+          <h2>Your Cart</h2>
+        </header>
+        <div class="w3-container">
+            <table style="width:100%">
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+              </tr>
+              <% set_cart.items.each do |item| %>
+              <tr>
+                <td><%= image_tag item.image, size: "30x30" %></td>
+                <td><%= item.title %></td>
+                <td><%= item.description %></td>
+                <td><%= number_to_currency(item.price) %></td>
+              	<td class="quantity">
+                    <%= button_to "+", cart_add_path(item_id: item.id), method: :patch%>
+                    <%= set_cart.contents[item.id.to_s] %>
+                    <%= button_to "-", cart_subtract_path(item_id: item.id), method: :patch%>
+                </td>
+                <td><%= link_to "Remove", cart_path(item_id: item.id), method: :delete %></td>
+              </tr>
+              <% end %>
+            </table>
         </div>
-    </li>
-    <li><%= link_to "View Cart", "/cart" %></li>
-    <div class="cart"><h3><%= session[:cart].values.sum unless session[:cart].nil? %></h3>
-      <%= image_tag ("cart.png"), size: "30x30" %></div>
-  </ul>
+        <footer class="w3-container w3-teal">
+          <% if current_user %>
+            <h4><%= link_to"Checkout", orders_path, method: "post" %></h4>
+          <% else %>
+            <h4><%= link_to "Login or Create Account to Checkout", login_path %></h4>
+          <% end %>
+        </footer>
+      </div>
+    </div>
+  </div>
+</ul>
   <% flash.each do |type, message| %>
 	<div class="green-flash">
     	<p><%= sanitize(message) %></p>
   </div>
  <% end %>
     <%= yield %>
-    <div class="footer">
-      <div class="footer-helper">
-      <h1> <%= link_to "Orders", admin_orders_path if current_admin? %></h1>
-      <h1> <%= link_to "Orders", orders_path if session[:user_id] && !current_admin? %></h1>
-      <h1> <%= link_to "Sign Up!", new_user_path unless current_user%> </h1>
-      <h1> <%= link_to "Admin Dashboard", admin_dashboard_path if current_admin? %></h1>
-      <h1> <%= link_to "Dashboard", dashboard_path if session[:user_id] && !current_admin?%> </h1>
-    </div>
-    </div>
   </body>
 </html>

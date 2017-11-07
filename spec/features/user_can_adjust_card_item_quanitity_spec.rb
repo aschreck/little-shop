@@ -2,7 +2,7 @@ require 'rails_helper'
 describe "User visits /cart with items in the cart." do
 	it "they can increase the quantity" do
 	  category = Category.create(title: "Breakfast")
-    item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 1.50, image: "asdfs")
+    item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 1.50)
 
 		visit items_path
 		click_link "Add to Cart"

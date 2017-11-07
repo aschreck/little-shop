@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "Visitor visits the /cart path" do
   it 'they can remove and item from the cart' do
     category = Category.create(title: "Thing")
-    item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 1.25, image: "asdfs")
+    item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 1.25)
 
     visit items_path
 
