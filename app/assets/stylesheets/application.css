@@ -111,6 +111,16 @@ li.dropdown {
   background-color: #2b2b2d;
 }
 
+td {
+  margin: 5%;
+  text-align: center;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 /*Home Page*/
 
 .home {
