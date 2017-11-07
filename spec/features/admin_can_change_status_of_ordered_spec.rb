@@ -3,7 +3,7 @@ require "rails_helper"
 describe "when admin clicks on link to change order" do
   it "changes the order to other status" do
     category = Category.create(title: "Breakfast")
-    item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 1.50, image: "asdfs")
+    item = category.items.create(title: "Soggy Cereal", description: "Kinda gross", price: 1.50)
     admin = User.create(name: "Doug", username: "DougBoy84", password: "password", role: "admin", address: "1234 Rails St")
     visit '/login'
 		fill_in "session[username]", with: "DougBoy84"

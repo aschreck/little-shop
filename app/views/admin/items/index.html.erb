@@ -1,4 +1,4 @@
-<table style="width:100%">
+<table class="table">
   <tr>
     <th>Image</th>
     <th>Title</th>
@@ -8,7 +8,7 @@
   </tr>
   <% @items.each do |item| %>
   <tr>
-    <td><%= image_tag item.image %></td>
+    <td><%= image_tag item.image, size: "100x100"%></td>
     <td><%= item.title %></td>
     <td><%= item.description %></td>
     <td><%= item.status %> <%= link_to "Retire", admin_item_path(item, status: 'retired'), method: :patch if item.active? %></td>

@@ -99,6 +99,28 @@ li.dropdown {
     display: block;
 }
 
+.w3-container button {
+  margin-top: 10%;
+  color: grey;
+  display: flex;
+} .w3-container button h3{
+  margin: 0;
+  color: white;
+  }
+.w3-button:hover {
+  background-color: #2b2b2d;
+}
+
+td {
+  margin: 5%;
+  text-align: center;
+}
+
+.quantity {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 /*Home Page*/
 
 .home {
@@ -108,24 +130,51 @@ li.dropdown {
   height: 100%;
 }
 
-.footer {
+.order-header{
   display: flex;
-  justify-content: space-around;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 10%;
-  background-color: #1a1622;
-} .footer a {
-    color: white;
-    text-decoration: none;
-  }
-
-.footer-helper {
-  width: 80%;
-  display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+} .order-header h1{
+  padding-top: 9%;
+  margin: 0;
+  font-size: 35px;
 }
+
+.dashboard-header h1{
+  padding-top: 6%;
+  margin: 0;
+  font-size: 35px;
+}
+
+.sign-up {
+  margin: 3%;
+  float: right;
+  width: 19%;
+  height: 64%;
+  background-color: #13141e;
+} .sign-up h1{
+  margin: 19%;
+  justify-content: center;
+  display: flex;
+} .sign-up h1 a{
+  color: white;
+  text-decoration: none;
+}
+
+.home-form{
+  width: 90%;
+  margin: 10%;
+} .home-form label{
+    color: white;
+  } .home-form input{
+    width: 90%;
+    height: 34px;
+  } .home-form button{
+      margin: 18% 10%;
+      color: white;
+      background-color: black;
+    } .home-form button:hover {
+      color: #9a2525;
+    }
 
 /**/
 
@@ -133,7 +182,7 @@ div.items-index {
   margin: 5px;
   width: 25%;
   background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
 } div.items-index img{
   width: 100%;
@@ -160,6 +209,8 @@ div.items-index {
   color: white;
 } .cart h3{
   margin: 8px 0px;
+} .cart:focus{
+
 }
 
 .pagination {
@@ -169,3 +220,39 @@ div.items-index {
 } .pagination a {
   font-size: 20px;
 }
+
+h1, h3 {
+  display: flex;
+  justify-content: center;
+}
+
+.table{
+  width: 98%;
+  margin: 1%;
+} .table th{
+font-size: x-large;
+} .table td {
+  height: 70px;
+  text-align: center;
+  border: wheat solid;
+  overflow: scroll;
+  }
+
+.items-index{
+  border: black;
+}
+
+.container {
+  border-top: solid;
+  border-bottom: solid;
+} .container h3 {
+  color: border: wheat solid;
+} .container h4 {
+    text-align: center;
+  }
+
+.category-index{
+  border: solid;
+} .category-index h1 a{
+    text-decoration: none;
+  }

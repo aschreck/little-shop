@@ -11,12 +11,12 @@ Rails.application.routes.draw do
   resource :cart, only: [:show, :create, :destroy, :update]
   resources :users, only: [:new, :create, :edit, :update]
   resources :orders, only: [:index, :show, :create]
-
+  resources :categories, only: [:index]
   get    '/dashboard',     to: "base#dashboard"
   get    '/login',         to: 'sessions#new'
   post   '/login',         to: 'sessions#create'
   delete '/logout',        to: 'sessions#destroy'
-  get    '/:title',        to: 'categories#show'
 	patch  '/cart/add',      to: "carts#add"
-	patch	 '/cart/subtract', to: "carts#subtract"  
+	patch	 '/cart/subtract', to: "carts#subtract"
+  get    '/:title',        to: 'categories#show'
 end
