@@ -4,7 +4,9 @@
 <section class="items">
 <% @items.each do |item| %>
 <div class="items-index">
-	<%= image_tag item.image%>
+	<div class="items-index-image">
+		<%= image_tag item.image, size: "254x339" %>
+	</div>
   <div class="container">
 		<h3>Title: <%= link_to item.title, item_path(item) %></h3>
 		<h3>Description: <%= item.description %></h3>

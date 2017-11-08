@@ -178,13 +178,15 @@ td {
 
 /**/
 
-div.items-index {
+.items-index {
+  max-height: 30%;
+  min-height: 30%;
   margin: 5px;
   width: 25%;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   margin-bottom: 25px;
-} div.items-index img{
+} .items-index img{
   width: 100%;
 }
 
