@@ -6,7 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+
 User.create(name: "Miguel", username: "miguel", password: "password", role: "admin", address: "1234 Rails St")
+dolls = Category.create(title: "Haunted Dolls")
+dolls.items.create(title: "Rob" , description: "Makes scary sounds in the night", price: 50.0, image: "robert_doll.jpeg")
+dolls.items.create(title: "Belinda", description: "Her eyes follow you around the room", price: 75.0, image: "creepy_doll.jpeg")
+dolls.items.create(title: "Burned Baby", description: "Survived a fire...smoke comes from eyes at night", price: 85.0, image: "fire_doll.jpeg")
+dolls.items.create(title: "Shirley Temple", description: "When left alone, she will sing softly...", price: 125.0, image: "shirley_temple.jpeg")
+dolls.items.create(title: "Sarah", description: "Previous owners reported eerie church hymns at night", price: 65.0, image: "church_doll.jpeg")
 
 
 # 10.times do
