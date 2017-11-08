@@ -8,7 +8,7 @@
   <div class="container">
 		<h3>Title: <%= link_to item.title, item_path(item) %></h3>
 		<h3>Description: <%= item.description %></h3>
-		<h3>Price: <%= item.price %></h3>
+		<h3>Price: <%= number_to_currency(item.price) %></h3>
 		<% if item.active? %>
 		<h4><%= link_to "Add to Cart", cart_path(item_id: item.id), method: :post %></h4>
 		<% else %>

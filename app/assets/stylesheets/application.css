@@ -281,3 +281,39 @@ font-size: x-large;
     color: wheat;
     text-decoration: none;
   }
+
+.description {
+  text-align: center;
+}
+
+
+ .showimage {
+  border-style: solid;
+  padding: 50px 100px 100px 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }.showimage img{
+    float: left; 
+  }
+
+.showcontainer{
+  display: flex;
+  justify-content: center;
+  
+}
+
+.information {
+  float: right;
+  padding: 20px 0px 0px 100px
+}
+
+.chckbtn {
+  text-align: center;
+  padding-top: 25px;
+  position: absolute;
+  bottom: 0;
+}
+
+ .button_to {
+  text-align:center;
+  text-decoration-color: blue;
+}
