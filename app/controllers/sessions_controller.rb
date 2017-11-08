@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    protect_from_forgery except: [:create] 
+    protect_from_forgery except: [:create]
 
     def new
 
@@ -13,11 +13,12 @@ class SessionsController < ApplicationController
       user.name = request.env['omniauth.auth']["info"]["name"]
       user.oauth_token = request.env['omniauth.auth']["credentials"]["token"]
       user.oath_expires_at = Time.at(request.env['omniauth.auth']["credentials"]["expires_at"])
-      user.save!
+      user.username = request.env['omniauth.auth']["info"]["name"]
       user.password = "password"
+      user.save!
       session[:user_id] = user.id
       redirect_to dashboard_path
-    else 
+    else
       @user = User.find_by(username: params[:session][:username])
       if @user && @user.authenticate(params[:session][:password])
         session[:user_id] = @user.id
@@ -29,7 +30,7 @@ class SessionsController < ApplicationController
       else
         render :new
       end
-    end 
+    end
   end
 
   def destroy
@@ -41,5 +42,5 @@ class SessionsController < ApplicationController
     user = User.from_omniauth(env["omniauth.auth"])
     session[:user_id] = user.id
     redirect_to root_path
-  end 
+  end
 end
