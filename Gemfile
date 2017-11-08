@@ -30,6 +30,9 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'test-unit'
 gem 'will_paginate', '~> 3.1.0'
 gem 'faker', :git => 'git://github.com/stympy/faker.git', :branch => 'master'
+gem "figaro"
+gem 'omniauth-google-oauth2'
+gem "awesome_print"
 
 
 # Use Capistrano for deployment
