@@ -1,12 +1,22 @@
-<% @order.items.each do |item| %>
-<div class="order-table">
-  <h2><%= link_to item.title, item_path(item) %></h2>
-  <h2><%= item.description%></h2>
-  <h2><%= item.price %></h2>
-</div>
-<% end %>
-<p><%= @order.status %></p>
-<p><%= number_to_currency(@order.total) %></p>
-<p><%= @order.created_at %></p>
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Price</th>
+  </tr>
 
-<%= @order.updated_at if @order.completed? || @order.cancelled?  %>
+  <% @order.items.each do |item| %>
+  <tr>
+    <td><%= link_to item.title, item_path(item) %></td>
+    <td><%= item.description%></td>
+    <td><%= number_to_currency(item.price) %></td>
+  </tr>
+<% end %>
+</table>
+  <h1>Order Status</h1>
+  <div class="status-box">
+    <h2><%= @order.status %></h2>
+    <h2><%= number_to_currency(@order.total) %></h2>
+    <h2><%= @order.created_at %></h2>
+    <h2><%= @order.updated_at if @order.completed? || @order.cancelled?  %></h2>
+  </div>
