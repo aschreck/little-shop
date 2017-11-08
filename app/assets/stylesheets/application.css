@@ -245,6 +245,7 @@ font-size: x-large;
   border-bottom: solid;
 } .container h3 {
   border: wheat solid;
+  color: black;
 } .container h4 {
     text-align: center;
   }
