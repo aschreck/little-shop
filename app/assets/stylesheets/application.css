@@ -209,8 +209,6 @@ div.items-index {
   color: white;
 } .cart h3{
   margin: 8px 0px;
-} .cart:focus{
-
 }
 
 .pagination {
@@ -246,7 +244,7 @@ font-size: x-large;
   border-top: solid;
   border-bottom: solid;
 } .container h3 {
-  color: border: wheat solid;
+  border: wheat solid;
 } .container h4 {
     text-align: center;
   }
@@ -259,7 +257,7 @@ font-size: x-large;
 
 .clown{
   background-image: url(https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=1922&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
-  background-size:cover;
+  background-size: cover;
   height: 100%;
 }
 
