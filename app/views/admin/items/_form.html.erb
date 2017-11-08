@@ -1,9 +1,11 @@
-<%= form_for [:admin, @item] do |f|%>
+<div class="login-page">
+  <%= form_for [:admin, @item] do |f|%>
 
-  <%= f.text_field :title, placeholder: "Title" %>
-  <%= f.number_field :price, placeholder: "Price" %>
-  <%= f.text_field :image, placeholder: "Image" %>
-  <%= f.text_area :description, placeholder: "Description" %>
+  <p><%= f.text_field :title, placeholder: "Title" %></p><br>
+  <p><%= f.number_field :price, placeholder: "Price" %></p><br>
+  <p><%= f.text_field :image, placeholder: "Image" %></p><br>
+  <p><%= f.text_area :description, placeholder: "Description" %></p><br>
 
-  <%= f.submit %>
-<% end %>
+  <p><%= f.button %></p>
+  <% end %>
+</div>
