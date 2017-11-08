@@ -1,2 +1,14 @@
-<h1>Edit This Item </h1>
-<%= render partial: "form" %>
+<body class="edit-item-body">
+  <div class="login-page">
+    <h1>Edit This Item </h1>
+    <%= form_for [:admin, @item] do |f|%>
+
+    <p><%= f.text_field :title, placeholder: "Title" %></p><br>
+    <p><%= f.number_field :price, placeholder: "Price" %></p><br>
+    <p><%= f.text_field :image, placeholder: "Image" %></p><br>
+    <p><%= f.text_area :description, placeholder: "Description" %></p><br>
+
+    <p><%= f.button %></p>
+    <% end %>
+  </div>
+</body>

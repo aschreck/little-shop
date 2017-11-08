@@ -5,6 +5,7 @@ class CartsController < ApplicationController
     @item = Item.find_by(id: id)
     session[:cart] ||= Hash.new(0)
     session[:cart][id] = (session[:cart][id] || 0) + 1
+    flash[:notice] = "Successfully add item to your cart."
     redirect_to items_path
   end
 
@@ -28,16 +29,16 @@ class CartsController < ApplicationController
 
 	def add
 		value = session[:cart][params["item_id"]]
-		session[:cart][params["item_id"]] = value + 1  
+		session[:cart][params["item_id"]] = value + 1
     redirect_to cart_path
-	end 
+	end
 
 	def subtract
 		value = session[:cart][params["item_id"]]
-		session[:cart][params["item_id"]] = value - 1  
+		session[:cart][params["item_id"]] = value - 1
 		if session[:cart][params["item_id"]] == 0
 			session[:cart].delete(params[:item_id])
-		end 
+		end
     redirect_to cart_path
-	end 
+	end
 end

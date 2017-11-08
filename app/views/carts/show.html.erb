@@ -30,7 +30,7 @@
 <h3>Total Price: <%=number_to_currency(@cart.total)%></h3>
 <br>
   <% if current_user %>
-		<h4 class="only"><%= link_to"Checkout", orders_path, method: "post" %></h4>
+		<h4 class="only"><button href="/orders"><%= link_to "Checkout", orders_path, method: "post" %></button></h4>
   <% else %>
-	  <h4 class="only_1"><%= link_to "Login or Create Account to Checkout", login_path %></h4>
+	  <h4 class="only_1"><button href="/login"><%= link_to "Login or Create Account to Checkout", login_path %></button</h4>
   <% end %>

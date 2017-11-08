@@ -1,0 +1,11 @@
+
+<h1><%= @item.title%></h1>
+<div class="showcontainer">
+	<div class="showimage">
+		<%= image_tag @item.image, size: "250x250" %>
+		<p class="description"><%= number_to_currency(@item.price)%></p>
+		<p class="description"><%= @item.description%></p>
+		<p class="cartbutton"><%=button_to "Add to Cart", cart_path(item_id: @item.id), method: :post %></p>
+
+	</div>
+</div>

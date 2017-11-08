@@ -7,9 +7,19 @@
     <th> <%= link_to "Completed:", "/admin/dashboard?status=completed" %> <%= Order.completed.count %></th>
   </tr>
 </table>
-    <% @orders.each do |order| %>
-      <%= link_to "Show Order Number #{order.id}", admin_order_path(order) %><br>
-      <%= link_to "cancel", admin_order_path(order, status: "cancelled"), method: :patch if order.paid? || order.ordered? %><br>
-      <%= link_to "mark as paid", admin_order_path(order, status: "paid"), method: :patch if order.ordered? %><br>
-      <%= link_to "mark as completed", admin_order_path(order, status: "completed"), method: :patch if order.paid? %><br>
-    <% end %>
+
+<table class="table">
+  <tr>
+    <th>Order Number</th>
+    <th>Cancel</th>
+    <th>Mark as Paid or Completed</th>
+  </tr>
+  <% @orders.each do |order| %>
+  <tr>
+    <td><h3><%= link_to "Show Order Number #{order.id}", admin_order_path(order) %></h3></td>
+    <td><h3><%= link_to "cancel", admin_order_path(order, status: "cancelled"), method: :patch if order.paid? || order.ordered? %></h3></td>
+    <td><h3><%= link_to "mark as paid", admin_order_path(order, status: "paid"), method: :patch if order.ordered? %>
+    <%= link_to "mark as completed", admin_order_path(order, status: "completed"), method: :patch if order.paid? %></h3></td>
+  </tr>
+  <% end %>
+</table>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :current_user?, except: [:new, :create]
+  before_action :current_user?, except: [:new, :create, :auth]
 
   def new
     @user = User.new
@@ -35,7 +35,11 @@ class UsersController < ApplicationController
 			flash[:notice] = "Something Went Wrong! Try Again!"
 			render :edit
 		end
-	end
+  end
+  
+  def auth
+    byebug
+  end 
 
   private
 

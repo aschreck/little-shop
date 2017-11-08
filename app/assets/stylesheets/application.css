@@ -256,3 +256,109 @@ font-size: x-large;
 } .category-index h1 a{
     text-decoration: none;
   }
+
+.clown{
+  background-image: url(https://images.unsplash.com/photo-1509248961158-e54f6934749c?auto=format&fit=crop&w=1922&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  background-size:cover;
+  height: 100%;
+}
+
+.login-page {
+  height: 70%;
+  width: 22%;
+  margin: 4%;
+} .login-page h1{
+  color: wheat;
+  margin: 1%;
+  } .login-page p{
+    margin: 0;
+    text-align: center;
+  } .login-page p button {
+    width: 50%;
+    background-color: wheat;
+    color: black;
+  } .login-page h3 a{
+    color: wheat;
+    text-decoration: none;
+  }
+
+.description {
+  text-align: center;
+  font-size: 20px
+}
+
+
+ .showimage {
+  border-style: solid;
+  padding: 50px 100px 100px 100px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }.showimage img{
+    float: left;
+  }
+
+.showcontainer{
+  display: flex;
+  justify-content: center;
+
+}
+
+.information {
+  float: right;
+  padding: 20px 0px 0px 100px
+}
+
+.chckbtn {
+  text-align: center;
+  padding-top: 25px;
+  position: absolute;
+  bottom: 0;
+}
+
+ .button_to {
+  text-align:center;
+  text-decoration-color: blue;
+}
+
+
+.only {
+  text-align: center;
+  padding: 5%;
+} .only a {
+    text-decoration: none;
+        font-size: xx-large;
+  } .only button{
+    width: 80%;
+    background-color: wheat;
+  }
+.status-box{
+  align-content: center;
+  border: wheat solid;
+  margin: 0 20%;
+  height: 300px;
+} .status-box h2{
+  text-align: center;
+  margin: 5%
+}
+
+.edit-item-body{
+  background-image: url(https://images.unsplash.com/photo-1477659803863-c1bf91b34c90?auto=format&fit=crop&w=3300&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D);
+  background-size: cover;
+} .edit-item-body h1{
+  text-align: center;
+  color: wheat;
+}
+
+  .user_screen{
+    margin: 50px 300px 50px 300px;
+    background-color: #333333;
+    opacity: 0.98;
+  } .user_screen h1, h3, p {
+    opacity: 1.0;
+    font-weight: bold;
+    color: white;
+  }
+
+  .user_screen_img {
+    background-image: url(https://images.unsplash.com/photo-1477313372947-d68a7d410e9f?auto=format&fit=crop&w=1350&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D) 
+  }
+
