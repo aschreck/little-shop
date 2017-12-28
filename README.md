@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[Aaron Schreck](https://github.com/aschreck), [Randy Springer](https://github.com/randy-darsh), and [Miguel Silva](https://github.com/MiguelSilva1997) collaborated to create this project as a part of their education at Turing School of Software and Design. The primary learning goal of Little Shop was to explore authentication and authorization, sessions, and basic busines intelligence by building a single-tenant e-commerce site. We chose to sell haunted dolls. The app is hosted [here](https://little-nightmares.herokuapp.com/). 
